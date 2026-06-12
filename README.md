@@ -4,6 +4,8 @@ Turn your phone into a full-screen pickup sign. Built for rideshare, taxi, chauf
 
 Single HTML file. No install. Works offline. You own it forever.
 
+[View the app in your browser here.](https://inventwithpython.com/curbsign/curbsign.html)
+
 ## Use
 
 1. Download `curbsign.html`.
