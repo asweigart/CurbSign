@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#f6f6f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#101114" media="(prefers-color-scheme: dark)">
 
-  <meta name="description" content="Free full-screen custom text signs for phones/tablets/displays. Works offline in any browser — no install, no signup.">
+  <meta name="description" content="Free pickup sign maker for rideshare, Uber, Lyft, taxi, and chauffeur drivers. Turn your phone into a big-text name sign. Works offline in any browser — no install, no signup.">
   <!-- Keywords: ignored by Google but still used by some search engines and site search.
        Kept short and focused on phrases real users type. -->
   <meta name="keywords" content="pickup sign, name sign, driver sign, chauffeur sign, rideshare sign, uber driver sign, lyft driver sign, taxi sign, airport pickup sign, meet and greet sign, limo driver sign, name placard, digital sign maker, phone name sign, fullscreen text, big text display, offline web app">
@@ -23,20 +23,20 @@
 
   <!-- Open Graph / social embed metadata. The OG image is an inline SVG data URI so the
        page remains a single self-contained file with no external requests. -->
-  <meta property="og:title" content="CurbSign — Full-Screen Custom Text Signs for Phones/Tablets/Displays">
+  <meta property="og:title" content="CurbSign — Free Pickup Sign Maker for Drivers">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CurbSign">
-  <meta property="og:description" content="Turn your phone into a big-text pickup name sign. Free, offline, browser-based — perfect for rideshare, airport, chauffeur, and digital signs.">
+  <meta property="og:description" content="Turn your phone into a big-text pickup name sign. Free, offline, browser-based — perfect for rideshare, airport, chauffeur, and meet-and-greet pickups.">
   <meta property="og:image" content="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20630%22%3E%3Crect%20width%3D%221200%22%20height%3D%22630%22%20fill%3D%22%23ffd400%22%2F%3E%3Ctext%20x%3D%22600%22%20y%3D%22340%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20system-ui%2C%20sans-serif%22%20font-size%3D%22220%22%20font-weight%3D%22900%22%20fill%3D%22%23111%22%3ECurbSign%3C%2Ftext%3E%3Ctext%20x%3D%22600%22%20y%3D%22460%22%20text-anchor%3D%22middle%22%20font-family%3D%22-apple-system%2C%20system-ui%2C%20sans-serif%22%20font-size%3D%2256%22%20fill%3D%22%23222%22%3EBig-text%20pickup%20signs%20%E2%80%94%20works%20offline%3C%2Ftext%3E%3C%2Fsvg%3E">
   <meta property="og:image:alt" content="CurbSign logo — a big-text pickup sign app">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CurbSign — Full-Screen Custom Text Signs for Phones/Tablets/Displays">
-  <meta name="twitter:description" content="Turn your phone into a big-text digital sign. Free, offline, browser-based.">
+  <meta name="twitter:title" content="CurbSign — Free Pickup Sign Maker for Drivers">
+  <meta name="twitter:description" content="Turn your phone into a big-text pickup name sign. Free, offline, browser-based.">
 
   <!-- Inline SVG favicon. Stylized name placard with three "lines of text" — readable at 16px. -->
   <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20x%3D%226%22%20y%3D%2212%22%20width%3D%2252%22%20height%3D%2240%22%20rx%3D%225%22%20fill%3D%22%23ffd400%22%20stroke%3D%22%23111%22%20stroke-width%3D%224%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2222%22%20width%3D%2236%22%20height%3D%225%22%20fill%3D%22%23111%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2231%22%20width%3D%2236%22%20height%3D%225%22%20fill%3D%22%23111%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2240%22%20width%3D%2224%22%20height%3D%225%22%20fill%3D%22%23111%22%2F%3E%3C%2Fsvg%3E">
 
-  <title>CurbSign — Full-Screen Custom Text Signs for Phones/Tablets/Displays</title>
+  <title>CurbSign — Free Pickup Sign Maker for Rideshare &amp; Chauffeur Drivers</title>
 
   <!-- Structured data: schema.org WebApplication. Helps search engines categorize the
        page and may surface rich results (free badge, app category). -->
@@ -45,7 +45,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "CurbSign",
-    "description": "Free full-screen custom text signs for phones/tablets/displays. Works offline in any browser.",
+    "description": "Free pickup sign maker that turns your phone into a big-text name sign. Built for rideshare, Uber, Lyft, taxi, chauffeur, limo, and airport meet-and-greet drivers. Works offline in any browser.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any (web browser)",
     "browserRequirements": "Requires JavaScript. Works offline once downloaded.",
@@ -905,47 +905,50 @@
 
   // Display order in the dropdown. English first; the rest roughly follow the
   // user's listed order (which tracks global speaker counts).
+  // `flag` is shown next to each language name in the dropdown. For languages
+  // not tied to a single country (Arabic, Catalan, etc.) we pick the country
+  // where it is the / a primary official language.
   const LANGS = [
-    { code: 'en',  name: 'English' },
-    { code: 'zh',  name: '简体中文' },
-    { code: 'es',  name: 'Español' },
-    { code: 'ar',  name: 'العربية' },
-    { code: 'id',  name: 'Bahasa Indonesia' },
-    { code: 'pt',  name: 'Português' },
-    { code: 'fr',  name: 'Français' },
-    { code: 'ja',  name: '日本語' },
-    { code: 'ru',  name: 'Русский' },
-    { code: 'de',  name: 'Deutsch' },
-    { code: 'hi',  name: 'हिन्दी' },
-    { code: 'bn',  name: 'বাংলা' },
-    { code: 'ur',  name: 'اردو' },
-    { code: 'ko',  name: '한국어' },
-    { code: 'vi',  name: 'Tiếng Việt' },
-    { code: 'tr',  name: 'Türkçe' },
-    { code: 'it',  name: 'Italiano' },
-    { code: 'nl',  name: 'Nederlands' },
-    { code: 'pl',  name: 'Polski' },
-    { code: 'th',  name: 'ไทย' },
-    { code: 'fa',  name: 'فارسی' },
-    { code: 'uk',  name: 'Українська' },
-    { code: 'cs',  name: 'Čeština' },
-    { code: 'ms',  name: 'Bahasa Melayu' },
-    { code: 'ro',  name: 'Română' },
-    { code: 'el',  name: 'Ελληνικά' },
-    { code: 'he',  name: 'עברית' },
-    { code: 'sv',  name: 'Svenska' },
-    { code: 'fil', name: 'Filipino' },
-    { code: 'ta',  name: 'தமிழ்' },
-    { code: 'hu',  name: 'Magyar' },
-    { code: 'da',  name: 'Dansk' },
-    { code: 'fi',  name: 'Suomi' },
-    { code: 'nb',  name: 'Norsk bokmål' },
-    { code: 'sk',  name: 'Slovenčina' },
-    { code: 'bg',  name: 'Български' },
-    { code: 'sr',  name: 'Српски' },
-    { code: 'hr',  name: 'Hrvatski' },
-    { code: 'sl',  name: 'Slovenščina' },
-    { code: 'ca',  name: 'Català' },
+    { code: 'en',  name: 'English',           flag: '🇬🇧' },
+    { code: 'zh',  name: '简体中文',           flag: '🇨🇳' },
+    { code: 'es',  name: 'Español',           flag: '🇪🇸' },
+    { code: 'ar',  name: 'العربية',           flag: '🇸🇦' },
+    { code: 'id',  name: 'Bahasa Indonesia',  flag: '🇮🇩' },
+    { code: 'pt',  name: 'Português',         flag: '🇵🇹' },
+    { code: 'fr',  name: 'Français',          flag: '🇫🇷' },
+    { code: 'ja',  name: '日本語',             flag: '🇯🇵' },
+    { code: 'ru',  name: 'Русский',           flag: '🇷🇺' },
+    { code: 'de',  name: 'Deutsch',           flag: '🇩🇪' },
+    { code: 'hi',  name: 'हिन्दी',              flag: '🇮🇳' },
+    { code: 'bn',  name: 'বাংলা',             flag: '🇧🇩' },
+    { code: 'ur',  name: 'اردو',              flag: '🇵🇰' },
+    { code: 'ko',  name: '한국어',             flag: '🇰🇷' },
+    { code: 'vi',  name: 'Tiếng Việt',        flag: '🇻🇳' },
+    { code: 'tr',  name: 'Türkçe',            flag: '🇹🇷' },
+    { code: 'it',  name: 'Italiano',          flag: '🇮🇹' },
+    { code: 'nl',  name: 'Nederlands',        flag: '🇳🇱' },
+    { code: 'pl',  name: 'Polski',            flag: '🇵🇱' },
+    { code: 'th',  name: 'ไทย',                flag: '🇹🇭' },
+    { code: 'fa',  name: 'فارسی',             flag: '🇮🇷' },
+    { code: 'uk',  name: 'Українська',        flag: '🇺🇦' },
+    { code: 'cs',  name: 'Čeština',           flag: '🇨🇿' },
+    { code: 'ms',  name: 'Bahasa Melayu',     flag: '🇲🇾' },
+    { code: 'ro',  name: 'Română',            flag: '🇷🇴' },
+    { code: 'el',  name: 'Ελληνικά',          flag: '🇬🇷' },
+    { code: 'he',  name: 'עברית',             flag: '🇮🇱' },
+    { code: 'sv',  name: 'Svenska',           flag: '🇸🇪' },
+    { code: 'fil', name: 'Filipino',          flag: '🇵🇭' },
+    { code: 'ta',  name: 'தமிழ்',              flag: '🇱🇰' },
+    { code: 'hu',  name: 'Magyar',            flag: '🇭🇺' },
+    { code: 'da',  name: 'Dansk',             flag: '🇩🇰' },
+    { code: 'fi',  name: 'Suomi',             flag: '🇫🇮' },
+    { code: 'nb',  name: 'Norsk bokmål',      flag: '🇳🇴' },
+    { code: 'sk',  name: 'Slovenčina',        flag: '🇸🇰' },
+    { code: 'bg',  name: 'Български',         flag: '🇧🇬' },
+    { code: 'sr',  name: 'Српски',            flag: '🇷🇸' },
+    { code: 'hr',  name: 'Hrvatski',          flag: '🇭🇷' },
+    { code: 'sl',  name: 'Slovenščina',       flag: '🇸🇮' },
+    { code: 'ca',  name: 'Català',            flag: '🇦🇩' },
   ];
 
   const TRANSLATIONS = {
@@ -2496,10 +2499,10 @@
     // Render once; we set .value separately to reflect the current selection.
     if ($lang.children.length === 0) {
       const frag = document.createDocumentFragment();
-      LANGS.forEach(({ code, name }) => {
+      LANGS.forEach(({ code, name, flag }) => {
         const opt = document.createElement('option');
         opt.value = code;
-        opt.textContent = name;
+        opt.textContent = `${flag}  ${name}`;
         // The option label is each language's *own* name so users can recognize
         // their language even when the active UI language is unfamiliar.
         opt.lang = code;
